@@ -11,17 +11,33 @@ import SwiftUI
 struct ContentView: View {
     
     @State var userName = ""
+    @State var passWord = ""
     
     var body: some View {
        
-        VStack(alignment:.leading){
+       
+        VStack(alignment:.center,spacing: 100){
+          
+            VStack(){
+                Text("\(userName)")
+                 Text("\(passWord)")
+            }
+          
             
-            Text("UserName")
-            TextField("Enter Your Name:", text: $userName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .border(Color.blue)
-                
-                
+            VStack(alignment:.leading){
+                Text("UserName")
+                         TextField("Enter Your Name:", text: $userName)
+                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                             .border(Color.blue)
+                         
+                         Text("Password")
+                         SecureField("Enter Your Password:", text: $passWord)
+                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                             .border(Color.blue)
+                             
+                           
+            }
+         
 
         }.font(.headline)
         
