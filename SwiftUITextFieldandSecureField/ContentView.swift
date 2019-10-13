@@ -9,8 +9,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var userName = ""
+    
     var body: some View {
-        Text("Hello World")
+       
+        VStack(alignment:.leading){
+            
+            Text("UserName")
+            TextField("Enter Your Name:", text: $userName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .border(Color.blue)
+                
+                
+
+        }.font(.headline)
+        
+      
+         
     }
 }
 
